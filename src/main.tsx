@@ -12,9 +12,20 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path:"sale",
         index: true,
         element: <PointOfSale/>, 
       },
+      {
+        path:"about",
+        index:true,
+        element: <PointOfSale/>
+      },
+      {
+        path:"contact",
+        index:true,
+        element: <PointOfSale/>
+      }
     ],
   },
 ]);

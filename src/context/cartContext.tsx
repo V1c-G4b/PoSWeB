@@ -1,4 +1,10 @@
-import React, { createContext, useContext, ReactNode, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  ReactNode,
+  useState,
+  useEffect,
+} from "react";
 import { ProductsObj } from "../pages/pos"; // Ajuste o caminho conforme necessário
 
 interface CartContextType {
@@ -6,8 +12,8 @@ interface CartContextType {
   addProductToCart: (product: ProductsObj) => void;
   removeProductFromCart: (productID: string) => void;
   clearCart: () => void;
-  decrementQuantity: (productOg:ProductsObj) => void;
-  incrementQuantity: (productOg:ProductsObj) => void;
+  decrementQuantity: (productOg: ProductsObj) => void;
+  incrementQuantity: (productOg: ProductsObj) => void;
 }
 
 const CartContextDefaultValues: CartContextType = {
@@ -28,7 +34,19 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [cartProducts, setCartProducts] = useState<ProductsObj[]>([]);
+  const [cartProducts, setCartProducts] = useState<ProductsObj[]>(() => {
+    const productsInLocal = localStorage.getItem("cartProducts");
+
+    if (productsInLocal) {
+      const parsedProducts = JSON.parse(productsInLocal);
+
+      return parsedProducts;
+    }
+  });
+
+  useEffect(() => {
+    saveInLocal();
+  }, [cartProducts]);
 
   const addProductToCart = (productToAdd: ProductsObj) => {
     if (productToAdd.quantity <= 0) {
@@ -65,7 +83,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     setCartProducts([]);
   };
 
-  const incrementQuantity = (productOg:ProductsObj) => {
+  const incrementQuantity = (productOg: ProductsObj) => {
     setCartProducts((currentProducts) => {
       return currentProducts.map((product) => {
         if (product.id === productOg.id) {
@@ -75,21 +93,24 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       });
     });
   };
-  
-  const decrementQuantity = (productOg:ProductsObj) => {
+
+  const decrementQuantity = (productOg: ProductsObj) => {
     setCartProducts((currentProducts) => {
       return currentProducts.map((product) => {
         if (product.id === productOg.id && product.quantity > 1) {
           return { ...product, quantity: product.quantity - 1 };
-        }
-        else if(product.id === productOg.id && product.quantity == 1){
-          removeProductFromCart(productOg.id)
+        } else if (product.id === productOg.id && product.quantity == 1) {
+          removeProductFromCart(productOg.id);
         }
         return product;
       });
     });
   };
-  
+
+  const saveInLocal = () => {
+    const cartProductsJSON = JSON.stringify(cartProducts);
+    localStorage.setItem("cartProducts", cartProductsJSON);
+  };
 
   return (
     <CartContext.Provider
@@ -99,7 +120,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         removeProductFromCart,
         clearCart,
         decrementQuantity,
-        incrementQuantity
+        incrementQuantity,
       }}
     >
       {children}
