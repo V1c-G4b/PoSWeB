@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# 🛒 PoSWeB - Ponto de Venda Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 Sobre o Projeto
 
-Currently, two official plugins are available:
+O **PoSWeB** é uma aplicação Ponto de Venda (P.O.S) Web intuitiva e eficiente, projetada para proporcionar uma experiência de venda ágil e responsiva. Ideal para pequenos e médios comerciantes, este projeto foca na demonstração de produtos, gerenciamento de estoque e facilitação do processo de checkout, tudo através de uma interface amigável e adaptável a diferentes dispositivos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🛠 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- ![Vite](https://img.shields.io/badge/-Vite-646cff?style=flat-square&logo=vite) para uma experiência de desenvolvimento otimizada.
+- ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38b2ac?style=flat-square&logo=tailwind-css) para design responsivo e personalizável.
+- ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react) com ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript) para desenvolvimento de UI dinâmica e segura.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ✨ Funcionalidades
 
-- Configure the top-level `parserOptions` property like this:
+- **🔍 Visualização de Produtos:** Explore produtos disponíveis com detalhes como preço e estoque.
+- **🛒 Carrinho de Compras:** Adicione itens ao carrinho e veja uma prévia instantânea dos seus pedidos.
+- **📱 Interface Responsiva:** Acesso perfeito em qualquer dispositivo, seja um smartphone, tablet ou desktop.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 🚀 Como Executar
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Pré-requisitos
+
+- ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js) (verifique a instalação com `node -v`).
+
+### 📦 Instalação
+
+1. Clone o repositório
+   ```sh
+   git clone https://github.com/V1c-G4b/PoSWeB.git
+2. Instale as dependências do NPM
+   ```sh
+    cd PoSWeB
+    npm install
+3. Inicie o projeto
+   ```sh
+    npm run dev
+    Acesse http://localhost:3000 para visualizar a aplicação.
+
+Acesse `http://localhost:3000` para visualizar a aplicação.
+
+## 📜 Licença
+
+Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
+
+## 📬 Contato
+
+- Vic Gab - [@Victor_Gaabrie](https://twitter.com/Victor_Gaabrie) - victoroliveira104@gmail.com
+- Projeto GitHub: [https://github.com/V1c-G4b/PoSWeB](https://github.com/V1c-G4b/PoSWeB)
