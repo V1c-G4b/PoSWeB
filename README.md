@@ -2,7 +2,8 @@
 
 ## 🌟 Sobre o Projeto
 
-O **PoSWeB** é uma aplicação Ponto de Venda (P.O.S) Web intuitiva e eficiente, projetada para proporcionar uma experiência de venda ágil e responsiva. Ideal para pequenos e médios comerciantes, este projeto foca na demonstração de produtos, gerenciamento de estoque e facilitação do processo de checkout, tudo através de uma interface amigável e adaptável a diferentes dispositivos.
+O **PoSWeB** é uma demonstração de layout para uma aplicação Ponto de Venda (P.O.S) Web, concebida para simular uma experiência de venda ágil e responsiva. Ideal para designers, desenvolvedores e pequenos a médios comerciantes interessados em visualizar o potencial de uma interface amigável e adaptável a diferentes dispositivos, este projeto enfoca na apresentação de como produtos podem ser exibidos, gerenciados e como o processo de checkout poderia ser facilitado, servindo como um modelo para futuras implementações.
+
 
 ### 🛠 Tecnologias Utilizadas
 
@@ -34,7 +35,7 @@ O **PoSWeB** é uma aplicação Ponto de Venda (P.O.S) Web intuitiva e eficiente
 3. Inicie o projeto
    ```sh
     npm run dev
-    Acesse http://localhost:3000 para visualizar a aplicação.
+    Acesse http://localhost:5174 para visualizar a aplicação.
 
 Acesse `http://localhost:3000` para visualizar a aplicação.
 
